@@ -33,7 +33,7 @@ public class Service {
         Gson gson = new Gson();
         Properties propsProducer = new Properties();
         System.out.println("Setup Enivorment TEAM is: " + TEAMCONSANT);
-        propsProducer.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, System.getProperty("kafka","193.196.39.80:9092"));
+        propsProducer.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, System.getProperty("kafka","193.196.38.196:9092"));
         propsProducer.put("acks", "all");
         propsProducer.put("retries", 0);
         propsProducer.put("batch.size", 16384);
@@ -66,7 +66,7 @@ public class Service {
         }).start();
 
         Properties props = new Properties();
-        props.put("bootstrap.servers", System.getProperty("kafka","193.196.39.80:9092"));
+        props.put("bootstrap.servers", System.getProperty("kafka","193.196.38.196:9092"));
         props.put("group.id", "Consumer-" + UUID.randomUUID());
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");
