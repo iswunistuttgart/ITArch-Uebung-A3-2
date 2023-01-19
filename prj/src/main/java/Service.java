@@ -28,8 +28,9 @@ public class Service {
 
 
     public static void main(String args[]){
-        TEAMCONSANT += System.getProperty("TEAM","TESTTEAM");
-        BEST_QRCODE += System.getProperty("TEAM","TESTTEAM");
+        TEAMCONSANT += System.getenv("TEAM") == null ? "TESTTEAM" : System.getenv("TEAM");
+
+        BEST_QRCODE += System.getenv("TEAM") == null ? "TESTTEAM" : System.getenv("TEAM");
         Gson gson = new Gson();
         Properties propsProducer = new Properties();
         System.out.println("Setup Enivorment TEAM is: " + TEAMCONSANT);
